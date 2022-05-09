@@ -1,3 +1,4 @@
+from optparse import Option
 import os, socket, subprocess
 
 #function to obtain the ip address
@@ -15,8 +16,7 @@ def obtain_ip():
 #function for active scanning
 def activeScan():
     option = ["1. Local Network", "2. Port Scanning", "3. Stack Fingerprinting", "4. Packet Tracing", "5. Remote Network", "6. Online Targets"]
-    for options in option:
-        print(option)
+    print("\n".join(option))
     attackType = int(input("Select option: "))
     
     match attackType:
@@ -64,8 +64,7 @@ def passiveScan():
             print("Option does not exist")
 
 scanType = ['1. Active Scanning', '2. Passive Scanning']
-for scanTypes in scanType:
-    print(scanType)
+print("\n".join(scanType))
 infoScan = int(input("Scan Type: "))
 if infoScan == 1:
     activeScan()
